@@ -1,6 +1,7 @@
 package net.minecraft.client;
 
 import java.util.Locale;
+import kefirdlc.KefirDLC;
 import javax.annotation.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.IGuiEventListener;
@@ -532,6 +533,7 @@ public class KeyboardListener
                 }
             }
 
+            KefirDLC.getInstance().onKey(key, scanCode, action, modifiers);
             Reflector.ForgeHooksClient_fireKeyInput.call(key, scanCode, action, modifiers);
         }
     }

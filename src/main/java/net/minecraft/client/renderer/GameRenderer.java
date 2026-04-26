@@ -5,6 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import kefirdlc.KefirDLC;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
@@ -977,6 +978,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
         matrixStackIn.rotate(Vector3f.XP.rotationDegrees(activerenderinfo.getPitch()));
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(activerenderinfo.getYaw() + 180.0F));
         this.mc.worldRenderer.updateCameraAndRender(matrixStackIn, partialTicks, finishTimeNano, flag1, activerenderinfo, this, this.lightmapTexture, matrix4f);
+        KefirDLC.getInstance().onRender3D(matrixStackIn, partialTicks);
 
         if (Reflector.ForgeHooksClient_dispatchRenderLast.exists())
         {

@@ -16,6 +16,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
+import kefirdlc.KefirDLC;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
@@ -417,6 +418,7 @@ public class IngameGui extends AbstractGui
             }
         }
 
+        KefirDLC.getInstance().onRender2D(matrixStack, partialTicks, this.scaledWidth, this.scaledHeight);
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.enableAlphaTest();
     }

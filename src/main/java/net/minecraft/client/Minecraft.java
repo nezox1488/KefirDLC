@@ -16,6 +16,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.PlatformDescriptors;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.DataFixer;
+import kefirdlc.KefirDLC;
 import com.mojang.datafixers.util.Function4;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
@@ -1697,6 +1698,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
      */
     public void runTick()
     {
+        KefirDLC.getInstance().onClientTick();
         if (this.rightClickDelayTimer > 0)
         {
             --this.rightClickDelayTimer;
